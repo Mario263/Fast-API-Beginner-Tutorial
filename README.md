@@ -21,25 +21,35 @@ This repository is for people who want to learn FastAPI from scratch. The code i
 git clone https://github.com/Mario263/Fast-API-Beginner-Tutorial.git
 cd Fast-API-Beginner-Tutorial 
 
+```
+
 2. install Dependencies 
 
 ```bash Install dependencies using uv (recommended) or pip: 
+```
 
 # Using uv (faster)
+```bash
 uv sync
 
+```
+
 # Or using pip
+```bash 
 pip install fastapi[standard]
 
-Running the Application
+```
+### Running the Application
+
 Start the development server:
-
+```bash 
 fastapi dev main.py
-
+```
 
 The application will be available at http://localhost:8000
 
 ### 📚 What You'll Learn
+
 This tutorial covers fundamental FastAPI concepts:
 
 Basic routing: Creating HTTP endpoints with route decorators

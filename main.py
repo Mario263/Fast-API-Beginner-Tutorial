@@ -1,0 +1,41 @@
+from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
+
+app = FastAPI()
+
+posts: list[dict] = [
+    {
+        "id": 1,
+        "author": "mario",
+        "title": "Hello, FastAPI",
+        "content": "This is my first post using FastAPI. Next up: routing, schemas, and a database.",
+        "date_posted": "2026-01-28T09:15:00",
+    },
+    {
+        "id": 2,
+        "author": "corey",
+        "title": "Why I like Pydantic",
+        "content": "Validation, parsing, and great editor support make it a joy to work with in APIs.",
+        "date_posted": "2026-01-27T18:42:10",
+    },
+    {
+        "id": 3,
+        "author": "alex",
+        "title": "API tips: consistent error shapes",
+        "content": "Pick a consistent error response format early; your frontend and logs will thank you.",
+        "date_posted": "2026-01-25T12:05:33",
+    },
+]
+
+# HTML route
+
+@app.get("/", response_class=HTMLResponse, include_in_schema=False)
+@app.get("/posts", response_class=HTMLResponse, include_in_schema=False)
+def home():
+    return f"<h1>{posts[0]['title']}</h1>"
+
+# API routes
+
+@app.get("/api/posts")
+def get_post():
+    return posts

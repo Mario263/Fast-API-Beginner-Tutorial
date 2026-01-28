@@ -25,7 +25,8 @@ cd Fast-API-Beginner-Tutorial
 
 2. install Dependencies 
 
-```bash Install dependencies using uv (recommended) or pip: 
+```bash 
+Install dependencies using uv (recommended) or pip: 
 ```
 
 # Using uv (faster)
